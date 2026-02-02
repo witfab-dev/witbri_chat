@@ -1,0 +1,151 @@
+/* --- CONTAINER --- */
+.insta-auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 20px;
+}
+
+/* --- MAIN LOGIN CARD --- */
+.auth-card {
+  background: white;
+  border: 1px solid #dbdbdb;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.witbri-logo {
+  font-family: 'Cookie', cursive; /* Link in index.html for that script look */
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #262626;
+  user-select: none;
+}
+
+/* --- FORM ELEMENTS --- */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.insta-input {
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 10px 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border 0.1s ease;
+}
+
+.insta-input:focus {
+  border-color: #a8a8a8;
+}
+
+/* --- PASSWORD WRAPPER --- */
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container .insta-input {
+  padding-right: 40px; /* Space for the eye icon */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-80%); /* Adjusted for margin-bottom of input */
+  cursor: pointer;
+  color: #8e8e8e;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.password-toggle-icon:hover {
+  color: #262626;
+}
+
+/* --- ACTION BUTTON --- */
+.auth-btn {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 12px 0;
+  transition: background 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #1877f2;
+}
+
+.auth-btn:active {
+  opacity: 0.8;
+}
+
+.error-msg {
+  color: #ed4956;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* --- BOTTOM TOGGLE CARD --- */
+.auth-toggle {
+  background: white;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-toggle p {
+  color: #262626;
+}
+
+.auth-toggle span {
+  color: #0095f6;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.auth-toggle span:hover {
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 450px) {
+  .insta-auth {
+    background-color: white;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+
+  .auth-card, .auth-toggle {
+    border: none;
+    max-width: 100%;
+  }
+}

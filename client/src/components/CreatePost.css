@@ -1,0 +1,194 @@
+/* --- MODAL OVERLAY --- */
+.create-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* --- MAIN MODAL BOX --- */
+.create-modal-box {
+  background: white;
+  border-radius: 12px;
+  width: 450px; /* Default square for upload */
+  max-width: 95vw;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Widens the modal when image is selected */
+.create-modal-box:has(.split-view) {
+  width: 800px;
+}
+
+/* --- HEADER --- */
+.create-modal-header {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid #dbdbdb;
+  font-weight: 600;
+}
+
+.share-btn {
+  color: #0095f6;
+  background: none;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.share-btn:disabled {
+  opacity: 0.3;
+}
+
+/* --- PROGRESS BAR --- */
+.progress-container {
+  width: 100%;
+  height: 3px;
+  background: #f0f0f0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #0095f6;
+  transition: width 0.3s ease;
+}
+
+/* --- BODY & EDITOR SPLIT --- */
+.create-modal-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+
+
+.split-view {
+  width: 100%;
+  display: flex;
+}
+
+.post-editor {
+  display: flex;
+  width: 100%;
+}
+
+.editor-preview {
+  flex: 1.5;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #dbdbdb;
+}
+
+.editor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editor-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: white;
+}
+
+/* --- TEXTAREA & MENTIONS --- */
+.textarea-wrapper {
+  position: relative;
+  flex: 1;
+  margin-top: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+}
+
+.mention-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.mention-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.mention-dropdown li:hover {
+  background: #fafafa;
+}
+
+/* --- UPLOAD PLACEHOLDER --- */
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.select-btn {
+  background: #0095f6;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- SUCCESS SCREEN --- */
+.success-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon-pop {
+  animation: popScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popScale {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
